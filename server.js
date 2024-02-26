@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 const AccountModel = require("./models/account");
-// const accountRouter = require("./routers/account");
+const accountRouter = require("./routers/account");
 const port = 8000;
 
 // parse application/x-www-form-urlencoded
@@ -61,7 +61,7 @@ app.post("/login", (req, res, next) => {
     });
 });
 
-// app.use("/api/account/", accountRouter);
+app.use("/api/v1/account/", accountRouter);
 
 // app.get("/", (req, res, next) => {
 //   res.json("HOME");

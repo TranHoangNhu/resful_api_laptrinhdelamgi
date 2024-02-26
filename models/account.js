@@ -1,16 +1,14 @@
 const mongoose = require("mongoose");
 // Trước khi sử dụng dotenv, đảm bảo bạn gọi nó ở đầu file
-require('dotenv').config();
+require("dotenv").config();
 // Thông tin kết nối
 const username = process.env.MONGO_USERNAME;
 const password = process.env.MONGO_PASSWORD;
 
-// Tạo URL kết nối
-// const uri = `mongodb+srv://${username}:${password}@${clusterName}.mongodb.net/${databaseName}?retryWrites=true&w=majority`;
-const uri = `mongodb+srv://${username}:${password}@cluster0.gwrbesw.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
-
 // Kết nối với MongoDB
-mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(
+  `mongodb+srv://${username}:${password}@cluster0.gwrbesw.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`
+);
 
 // Lấy đối tượng kết nối
 const db = mongoose.connection;

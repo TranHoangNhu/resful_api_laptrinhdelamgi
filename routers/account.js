@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const AccountModel = require("./models/account");
+const AccountModel = require("../models/account");
 
 // get all account
 router.get("/", (req, res, next) => {
